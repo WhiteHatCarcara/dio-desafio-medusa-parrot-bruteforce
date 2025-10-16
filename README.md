@@ -23,7 +23,7 @@ Objetivo da Simulação: Explorar a enumeração de usuários (utilizando ferram
 Máquinas Virtuais: Metasploitable 2/DVWA).
 Software de Virtualização (VirtualBox). 
 Configuração de Rede (Bridge).
-!{metasploitable}(imagens/matasploitable.png)
+![metasploitable](imagens/matasploitable.png)
 
 # Passo a Passo dos Ataques Simulados
 Foi criada uma seção para cada serviço atacado (FTP, Web - DVWA, SMB).
